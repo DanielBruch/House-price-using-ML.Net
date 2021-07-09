@@ -64,7 +64,7 @@ namespace ia_toniazo
             IDataView dataView = mlContext.Data.LoadFromEnumerable<DatasetModel>(testeData);
             var predictions = model.Transform(dataView);
             var metrics = mlContext.Regression.Evaluate(predictions, "Label", "Score");
-            /*Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"*************************************************");
             Console.WriteLine($"*   Metricas de Analise de testes com {testeData.Count} itens   ");
             Console.WriteLine($"*------------------------------------------------");
@@ -73,7 +73,7 @@ namespace ia_toniazo
             Console.WriteLine($"*     Função de perda :   {metrics.LossFunction}");
             Console.WriteLine($"*     Erro Quadrático Médio:   {metrics.MeanSquaredError}");
             Console.WriteLine($"*     Erro médio absoluto:   {metrics.MeanAbsoluteError}");
-            Console.WriteLine($"*************************************************");*/
+            Console.WriteLine($"*************************************************");
 
         }
 
@@ -84,16 +84,16 @@ namespace ia_toniazo
             {
                 TamanhoTotal = 59F,
                 TamanhoPrivativo = 52F,
-                Bairro = (int) Bairro.Efapi,
+                Bairro = (int) Bairro.Centro,
                 Quartos = 2,
                 Suite = 0,
                 Garagem = 1,
                 Valor = 0F
             };
             var prediction = predictionFunction.Predict(simpleOffer);
-            /*Console.WriteLine($"**********************************************************************");
-            Console.WriteLine($"Teste de previsão: Tamanho:{simpleOffer.TamanhoTotal} = {(((prediction.Valor) * simpleOffer.TamanhoTotal) / 10):0.####}");
-            Console.WriteLine($"**********************************************************************");*/
+            Console.WriteLine($"***************************************************");
+            Console.WriteLine($"Teste de previsão: Tamanho:{simpleOffer.TamanhoTotal} = {(((prediction.Valor) * simpleOffer.TamanhoTotal) / 10)}");
+            Console.WriteLine($"**************************************************");
             Thread.Sleep(30000);
         }
     }
